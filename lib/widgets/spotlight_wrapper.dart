@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_theme.dart';
-
 class SpotlightWrapper extends StatefulWidget {
   final Widget child;
   const SpotlightWrapper({super.key, required this.child});
@@ -45,9 +43,11 @@ class _SpotlightWrapperState extends State<SpotlightWrapper> {
                     decoration: BoxDecoration(
                       gradient: RadialGradient(
                         center: Alignment(dx, dy),
-                        radius: 0.5, // Larger radius for global effect
+                        radius: 0.3, // Match ProjectCard radius
                         colors: [
-                          AppTheme.primaryPurple.withValues(alpha: 0.08),
+                          Colors.white.withValues(
+                            alpha: 0.1,
+                          ), // Match ProjectCard color
                           Colors.transparent,
                         ],
                         stops: const [0.0, 1.0],

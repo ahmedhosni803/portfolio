@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import '../theme/app_theme.dart';
-import '../core/constants/app_data.dart';
 
+import '../core/constants/app_data.dart';
 import '../core/utils/layout_utils.dart';
+import '../theme/app_theme.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -52,6 +52,126 @@ class AboutSection extends StatelessWidget {
               color: Colors.white70,
             ),
           ).animate().fadeIn(delay: 400.ms),
+
+          const SizedBox(height: 60),
+
+          // Experience Section
+          if (AppData.experiences.isNotEmpty) ...[
+            Text(
+              "Work Experience",
+              style: AppTheme.sectionTitle.copyWith(fontSize: 28),
+            ),
+            const SizedBox(height: 30),
+            ...AppData.experiences.map(
+              (exp) => Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: Container(
+                  width: 700,
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF172A45),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.05),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            exp.company,
+                            style: AppTheme.heroTitle.copyWith(fontSize: 20),
+                          ),
+                          Text(
+                            exp.period,
+                            style: AppTheme.bodyText.copyWith(
+                              color: Colors.white60,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        exp.role,
+                        style: AppTheme.bodyText.copyWith(
+                          color: AppTheme.primaryPurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        exp.description,
+                        style: AppTheme.bodyText.copyWith(
+                          color: Colors.white70,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+
+          const SizedBox(height: 40),
+
+          // Education Section
+          if (AppData.education.isNotEmpty) ...[
+            Text(
+              "Education",
+              style: AppTheme.sectionTitle.copyWith(fontSize: 28),
+            ),
+            const SizedBox(height: 30),
+            ...AppData.education.map(
+              (edu) => Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Container(
+                  width: 700,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 16,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            edu['degree']!,
+                            style: AppTheme.heroTitle.copyWith(fontSize: 16),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            edu['institution']!,
+                            style: AppTheme.bodyText.copyWith(
+                              color: Colors.white70,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        edu['date']!,
+                        style: AppTheme.bodyText.copyWith(
+                          color: AppTheme.primaryPurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

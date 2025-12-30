@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../core/constants/app_data.dart';
+import '../core/constants/routes.dart';
+import '../core/utils/layout_utils.dart';
 import '../models/project.dart';
 import '../theme/app_theme.dart';
-import '../core/utils/layout_utils.dart';
-import '../core/constants/routes.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -181,20 +182,8 @@ class _ProjectCardState extends State<ProjectCard> {
                             : TextAlign.right,
                       ),
                     ),
-                    const SizedBox(height: 20),
+
                     // Tech Stack (Placeholder logic since we don't have tech list in model yet)
-                    Row(
-                      mainAxisAlignment: isImageRight
-                          ? MainAxisAlignment.start
-                          : MainAxisAlignment.end,
-                      children: const [
-                        Text("Flutter", style: TextStyle(color: Colors.grey)),
-                        SizedBox(width: 20),
-                        Text("Dart", style: TextStyle(color: Colors.grey)),
-                        SizedBox(width: 20),
-                        Text("Firebase", style: TextStyle(color: Colors.grey)),
-                      ],
-                    ),
                     const SizedBox(height: 20),
                     Column(
                       crossAxisAlignment: isImageRight

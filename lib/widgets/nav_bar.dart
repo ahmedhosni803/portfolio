@@ -45,25 +45,25 @@ class NavBar extends StatelessWidget {
               children: [
                 _NavItem(
                   title: 'Home',
-                  icon: EvaIcons.home,
+                  icon: Iconsax.home_outline,
                   onTap: () => Navigator.pushNamed(context, Routes.home),
                 ),
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'About',
-                  icon: EvaIcons.person,
+                  icon: Iconsax.user_outline,
                   onTap: () => Navigator.pushNamed(context, Routes.about),
                 ),
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'Projects',
-                  icon: EvaIcons.briefcase,
+                  icon: Iconsax.briefcase_outline,
                   onTap: () => Navigator.pushNamed(context, Routes.projects),
                 ),
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'My CV',
-                  icon: EvaIcons.file_text,
+                  icon: Iconsax.document_download_outline,
                   onTap: () {
                     showDialog(
                       context: context,

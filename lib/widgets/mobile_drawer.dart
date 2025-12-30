@@ -21,22 +21,22 @@ class MobileDrawer extends StatelessWidget {
           ),
           _DrawerItem(
             title: 'Home',
-            icon: EvaIcons.home,
+            icon: Iconsax.home_outline,
             onTap: () => Navigator.pushNamed(context, Routes.home),
           ),
           _DrawerItem(
             title: 'About',
-            icon: EvaIcons.person,
+            icon: Iconsax.user_outline,
             onTap: () => Navigator.pushNamed(context, Routes.about),
           ),
           _DrawerItem(
             title: 'Projects',
-            icon: EvaIcons.briefcase,
+            icon: Iconsax.briefcase_outline,
             onTap: () => Navigator.pushNamed(context, Routes.projects),
           ),
           _DrawerItem(
             title: 'My CV',
-            icon: EvaIcons.file_text,
+            icon: Iconsax.document_download_outline,
             onTap: () {
               Navigator.pop(context); // Close drawer
               showDialog(

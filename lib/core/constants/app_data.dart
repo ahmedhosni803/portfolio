@@ -1,5 +1,5 @@
-import '../../models/project.dart';
 import '../../models/experience.dart';
+import '../../models/project.dart';
 
 class AppData {
   // Strings
@@ -22,7 +22,7 @@ class AppData {
   static const String contactPhone = "01226316290";
   static const String contactLocation = "Egypt, Cairo";
 
-  static const String cvUrl = "cv.pdf";
+  static const String cvUrl = "assets/pdf/my_cv.pdf";
 
   // Data
   static final List<Project> projects = [

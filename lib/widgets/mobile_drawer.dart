@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../theme/app_theme.dart';
-import '../core/constants/app_data.dart';
+
 import '../core/constants/routes.dart';
+import '../theme/app_theme.dart';
+import 'cv_preview_dialog.dart';
 
 class MobileDrawer extends StatelessWidget {
   const MobileDrawer({super.key});
@@ -32,11 +32,12 @@ class MobileDrawer extends StatelessWidget {
           ),
           _DrawerItem(
             title: 'My CV',
-            onTap: () async {
-              final uri = Uri.parse(AppData.cvUrl);
-              if (await canLaunchUrl(uri)) {
-                await launchUrl(uri);
-              }
+            onTap: () {
+              Navigator.pop(context); // Close drawer
+              showDialog(
+                context: context,
+                builder: (context) => const CvPreviewDialog(),
+              );
             },
           ),
         ],

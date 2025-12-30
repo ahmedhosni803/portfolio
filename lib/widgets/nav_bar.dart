@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../theme/app_theme.dart';
-import '../core/constants/routes.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../core/constants/app_data.dart';
 
+import '../core/constants/routes.dart';
 import '../core/utils/layout_utils.dart';
+import '../theme/app_theme.dart';
+import 'cv_preview_dialog.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -60,11 +59,11 @@ class NavBar extends StatelessWidget {
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'My CV',
-                  onTap: () async {
-                    final uri = Uri.parse(AppData.cvUrl);
-                    if (await canLaunchUrl(uri)) {
-                      await launchUrl(uri);
-                    }
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => const CvPreviewDialog(),
+                    );
                   },
                 ),
               ],

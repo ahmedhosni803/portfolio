@@ -30,6 +30,18 @@ class NavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Logo or Brand Name (optional, implied by Spacer currently)
+          // Logo
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, Routes.home),
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Image.asset(
+                'assets/logo/ahmed_logo.png',
+                height: 40,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
           const Spacer(),
 
           if (LayoutUtils.isMobile(context))

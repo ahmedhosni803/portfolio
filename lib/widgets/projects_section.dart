@@ -67,6 +67,7 @@ class ProjectCard extends StatefulWidget {
 
 class _ProjectCardState extends State<ProjectCard> {
   bool _isHovered = false;
+  Offset _mousePosition = Offset.zero;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +82,11 @@ class _ProjectCardState extends State<ProjectCard> {
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
+      onHover: (event) {
+        setState(() {
+          _mousePosition = event.localPosition;
+        });
+      },
       cursor: SystemMouseCursors.click,
       child: Container(
         constraints: const BoxConstraints(
@@ -228,6 +234,43 @@ class _ProjectCardState extends State<ProjectCard> {
                   ],
                 ),
               ),
+
+              // Spotlight Layer (Mouse Light Effect)
+              if (_isHovered)
+                Positioned.fill(
+                  child: IgnorePointer(
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        // Avoid division by zero
+                        if (constraints.maxWidth == 0 ||
+                            constraints.maxHeight == 0) {
+                          return const SizedBox();
+                        }
+
+                        // Calculate relative alignment (-1.0 to 1.0)
+                        final dx =
+                            (_mousePosition.dx / constraints.maxWidth) * 2 - 1;
+                        final dy =
+                            (_mousePosition.dy / constraints.maxHeight) * 2 - 1;
+
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            gradient: RadialGradient(
+                              center: Alignment(dx, dy),
+                              radius: 0.3, // Adjust spotlight size
+                              colors: [
+                                Colors.white.withValues(alpha: 0.1),
+                                Colors.transparent,
+                              ],
+                              stops: const [0.0, 1.0],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

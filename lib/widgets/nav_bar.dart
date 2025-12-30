@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 import '../core/constants/routes.dart';
 import '../core/utils/layout_utils.dart';
@@ -44,21 +45,25 @@ class NavBar extends StatelessWidget {
               children: [
                 _NavItem(
                   title: 'Home',
+                  icon: EvaIcons.home,
                   onTap: () => Navigator.pushNamed(context, Routes.home),
                 ),
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'About',
+                  icon: EvaIcons.person,
                   onTap: () => Navigator.pushNamed(context, Routes.about),
                 ),
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'Projects',
+                  icon: EvaIcons.briefcase,
                   onTap: () => Navigator.pushNamed(context, Routes.projects),
                 ),
                 const SizedBox(width: 40),
                 _NavItem(
                   title: 'My CV',
+                  icon: EvaIcons.file_text,
                   onTap: () {
                     showDialog(
                       context: context,
@@ -74,19 +79,61 @@ class NavBar extends StatelessWidget {
   }
 }
 
-class _NavItem extends StatelessWidget {
+class _NavItem extends StatefulWidget {
   final String title;
+  final IconData icon;
   final VoidCallback onTap;
 
-  const _NavItem({required this.title, required this.onTap});
+  const _NavItem({
+    required this.title,
+    required this.icon,
+    required this.onTap,
+  });
+
+  @override
+  State<_NavItem> createState() => _NavItemState();
+}
+
+class _NavItemState extends State<_NavItem> {
+  bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
-        onTap: onTap,
-        child: Text(title, style: AppTheme.navLink),
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            color: _isHovered
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Row(
+            children: [
+              Icon(
+                widget.icon,
+                color: _isHovered
+                    ? const Color(0xFF6C63FF)
+                    : Colors.white, // Highlight color
+                size: 20,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                widget.title,
+                style: AppTheme.navLink.copyWith(
+                  color: _isHovered ? Colors.white : Colors.white70,
+                  fontWeight: _isHovered ? FontWeight.bold : FontWeight.normal,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

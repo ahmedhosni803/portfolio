@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 import '../core/constants/routes.dart';
 import '../theme/app_theme.dart';
@@ -20,18 +21,22 @@ class MobileDrawer extends StatelessWidget {
           ),
           _DrawerItem(
             title: 'Home',
+            icon: EvaIcons.home,
             onTap: () => Navigator.pushNamed(context, Routes.home),
           ),
           _DrawerItem(
             title: 'About',
+            icon: EvaIcons.person,
             onTap: () => Navigator.pushNamed(context, Routes.about),
           ),
           _DrawerItem(
             title: 'Projects',
+            icon: EvaIcons.briefcase,
             onTap: () => Navigator.pushNamed(context, Routes.projects),
           ),
           _DrawerItem(
             title: 'My CV',
+            icon: EvaIcons.file_text,
             onTap: () {
               Navigator.pop(context); // Close drawer
               showDialog(
@@ -48,13 +53,19 @@ class MobileDrawer extends StatelessWidget {
 
 class _DrawerItem extends StatelessWidget {
   final String title;
+  final IconData icon;
   final VoidCallback onTap;
 
-  const _DrawerItem({required this.title, required this.onTap});
+  const _DrawerItem({
+    required this.title,
+    required this.icon,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      leading: Icon(icon, color: Colors.white70),
       title: Text(title, style: AppTheme.navLink),
       onTap: onTap,
     );

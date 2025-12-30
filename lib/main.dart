@@ -6,6 +6,7 @@ import 'core/constants/routes.dart';
 import 'core/router/app_router.dart';
 import 'providers/portfolio_provider.dart';
 import 'theme/app_theme.dart';
+import 'widgets/spotlight_wrapper.dart';
 
 void main() {
   usePathUrlStrategy();
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.theme,
         initialRoute: Routes.home,
         onGenerateRoute: AppRouter.generateRoute,
+        builder: (context, child) => SpotlightWrapper(child: child!),
       ),
     );
   }
-}
+  

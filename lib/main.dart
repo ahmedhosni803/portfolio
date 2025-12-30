@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/routes.dart';
@@ -7,6 +8,7 @@ import 'providers/portfolio_provider.dart';
 import 'theme/app_theme.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 

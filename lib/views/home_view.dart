@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../widgets/nav_bar.dart';
-import '../widgets/hero_section.dart';
-import '../widgets/about_section.dart';
-import '../widgets/experience_section.dart';
-import '../widgets/projects_section.dart';
-import '../widgets/contact_section.dart';
-import '../theme/app_theme.dart';
+import 'package:portfolio_app/widgets/about_section.dart';
 
+import '../theme/app_theme.dart';
+import '../widgets/contact_section.dart';
+import '../widgets/experience_section.dart';
+import '../widgets/hero_section.dart';
 import '../widgets/mobile_drawer.dart';
+import '../widgets/nav_bar.dart';
+import '../widgets/projects_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -64,13 +64,13 @@ class HomeView extends StatelessWidget {
                 const NavBar(),
                 const SizedBox(height: 50),
                 const HeroSection(),
-                const SizedBox(height: 50),
+                // const SizedBox(height: 50),
                 const AboutSection(),
-                const SizedBox(height: 50),
+                const SizedBox(height: 34),
                 const ExperienceSection(),
-                const SizedBox(height: 50),
+                const SizedBox(height: 34),
                 const ProjectsSection(),
-                const SizedBox(height: 100),
+                const SizedBox(height: 34),
                 const ContactSection(),
               ],
             ),

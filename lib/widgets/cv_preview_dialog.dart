@@ -9,11 +9,12 @@ class CvPreviewDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
+    return BottomSheet(
+      onClosing: () {},
       backgroundColor: Colors.transparent,
-      insetPadding: const EdgeInsets.all(20),
-      child: Container(
-        width: 1000,
+      // insetPadding: const EdgeInsets.all(20),
+      builder: (context) => Container(
+        width: double.infinity,
         height: MediaQuery.of(context).size.height * 0.9,
         decoration: BoxDecoration(
           color: Colors.white,

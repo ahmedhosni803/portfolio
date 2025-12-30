@@ -22,7 +22,7 @@ class AppData {
   static const String contactPhone = "01226316290";
   static const String contactLocation = "Egypt, Cairo";
 
-  static const String cvUrl = "assets/pdf/my_cv.pdf";
+  static const String cvUrl = "pdf/Ahmed_Hussiney_Hussein.pdf";
 
   // Data
   static final List<Project> projects = [
@@ -197,16 +197,30 @@ class AppData {
     Experience(
       company: 'BMS',
       role: 'Flutter Developer',
-      period: 'Nov 2023 – Oct 2024',
+      period: 'Dec 2023 – Nov 2024',
+      description:
+          'Built and maintained scalable apps for E-commerce and training systems.',
+    ),
+    Experience(
+      company: 'Binary',
+      role: 'Flutter Developer',
+      period: 'Feb 2023 – Jan 2024',
       description:
           'Built and maintained scalable apps for education and training systems.',
     ),
     Experience(
       company: 'Lightbulb Tech',
       role: 'Flutter Developer',
-      period: 'Feb 2023 – Dec 2023',
+      period: 'Mar 2023 – Dec 2023',
       description:
           'Developed educational applications focusing on usability and performance.',
+    ),
+    Experience(
+      company: 'Nebras',
+      role: 'Flutter Developer',
+      period: 'Sep 2021 – Dec 2023',
+      description:
+          'Developed E-commerce applications focusing on usability and performance.',
     ),
   ];
 

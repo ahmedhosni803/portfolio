@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../core/constants/app_data.dart';
+import '../core/utils/layout_utils.dart';
 import '../models/experience.dart';
 import '../theme/app_theme.dart';
-import '../core/utils/layout_utils.dart';
 
 class ExperienceSection extends StatelessWidget {
   const ExperienceSection({super.key});
@@ -27,6 +27,60 @@ class ExperienceSection extends StatelessWidget {
               return ExperienceCard(experience: experiences[index]);
             },
           ),
+          if (AppData.education.isNotEmpty) ...[
+            Text(
+              "Education",
+              style: AppTheme.sectionTitle.copyWith(fontSize: 28),
+            ),
+            const SizedBox(height: 30),
+            ...AppData.education.map(
+              (edu) => Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Container(
+                    width: 700,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 16,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.05),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              edu['degree']!,
+                              style: AppTheme.heroTitle.copyWith(fontSize: 16),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              edu['institution']!,
+                              style: AppTheme.bodyText.copyWith(
+                                color: Colors.white70,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          edu['date']!,
+                          style: AppTheme.bodyText.copyWith(
+                            color: AppTheme.primaryPurple,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

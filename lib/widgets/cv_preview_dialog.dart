@@ -39,10 +39,14 @@ class CvPreviewDialog extends StatelessWidget {
                     children: [
                       TextButton.icon(
                         onPressed: () async {
-                          final uri = Uri.parse(AppData.cvUrl);
-                          if (await canLaunchUrl(uri)) {
-                            await launchUrl(uri);
-                          }
+                          // On Flutter Web, assets are typically at "assets/<key>"
+                          // AppData.cvUrl is "assets/pdf/my_cv.pdf"
+                          // So the final URL path is "assets/assets/pdf/my_cv.pdf"
+                          final url = 'assets/${AppData.cvUrl}';
+                          await launchUrl(
+                            Uri.parse(url),
+                            webOnlyWindowName: '_blank',
+                          );
                         },
                         icon: const Icon(Icons.download),
                         label: const Text('Download'),

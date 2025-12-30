@@ -108,22 +108,34 @@ class _ExperienceCardState extends State<ExperienceCard> {
         margin: const EdgeInsets.only(bottom: 30),
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Color(0xFF2B114F), Color(0xFF130328)],
+            colors: _isHovered
+                ? [
+                    const Color(0xFF452775),
+                    const Color(0xFF2E1250),
+                  ] // Brighter on hover
+                : [const Color(0xFF2B114F), const Color(0xFF130328)],
           ),
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
             color: _isHovered
                 ? AppTheme.primaryPurple
-                : AppTheme.primaryPurple.withValues(alpha: 0.5),
+                : AppTheme.primaryPurple.withValues(alpha: 0.3),
+            width: _isHovered ? 1.5 : 1.0,
           ),
           boxShadow: _isHovered
               ? [
                   BoxShadow(
+                    color: AppTheme.primaryPurple.withValues(alpha: 0.4),
+                    blurRadius: 30,
+                    spreadRadius: 1,
+                  ),
+                  BoxShadow(
                     color: AppTheme.primaryPurple.withValues(alpha: 0.2),
-                    blurRadius: 15,
+                    blurRadius: 10,
+                    spreadRadius: -5,
                   ),
                 ]
               : [],

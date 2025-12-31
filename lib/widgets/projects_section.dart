@@ -105,7 +105,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 bottom: 0,
                 width: MediaQuery.of(context).size.width > 900 ? 600 : 500,
                 child: AnimatedScale(
-                  scale: _isHovered ? 1.05 : 1.0,
+                  scale: _isHovered ? 1.005 : 1.0,
                   duration: const Duration(milliseconds: 300),
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
@@ -125,9 +125,9 @@ class _ProjectCardState extends State<ProjectCard> {
                         fit: BoxFit.cover,
                         colorFilter: ColorFilter.mode(
                           AppTheme.primaryPurple.withValues(
-                            alpha: _isHovered ? 0.1 : 0.3,
+                            alpha: _isHovered ? 0.1 : 0.2,
                           ), // Tint reveals on hover
-                          BlendMode.srcOver,
+                          BlendMode.color,
                         ),
                       ),
                     ),
@@ -236,41 +236,41 @@ class _ProjectCardState extends State<ProjectCard> {
               ),
 
               // Spotlight Layer (Mouse Light Effect)
-              if (_isHovered)
-                Positioned.fill(
-                  child: IgnorePointer(
-                    child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        // Avoid division by zero
-                        if (constraints.maxWidth == 0 ||
-                            constraints.maxHeight == 0) {
-                          return const SizedBox();
-                        }
+              //   if (_isHovered)
+              //     Positioned.fill(
+              //       child: IgnorePointer(
+              //         child: LayoutBuilder(
+              //           builder: (context, constraints) {
+              //             // Avoid division by zero
+              //             if (constraints.maxWidth == 0 ||
+              //                 constraints.maxHeight == 0) {
+              //               return const SizedBox();
+              //             }
 
-                        // Calculate relative alignment (-1.0 to 1.0)
-                        final dx =
-                            (_mousePosition.dx / constraints.maxWidth) * 2 - 1;
-                        final dy =
-                            (_mousePosition.dy / constraints.maxHeight) * 2 - 1;
+              //             // Calculate relative alignment (-1.0 to 1.0)
+              //             final dx =
+              //                 (_mousePosition.dx / constraints.maxWidth) * 2 - 1;
+              //             final dy =
+              //                 (_mousePosition.dy / constraints.maxHeight) * 2 - 1;
 
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            gradient: RadialGradient(
-                              center: Alignment(dx, dy),
-                              radius: 0.3, // Adjust spotlight size
-                              colors: [
-                                Colors.white.withValues(alpha: 0.1),
-                                Colors.transparent,
-                              ],
-                              stops: const [0.0, 1.0],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
+              //             return Container(
+              //               decoration: BoxDecoration(
+              //                 borderRadius: BorderRadius.circular(14),
+              //                 gradient: RadialGradient(
+              //                   center: Alignment(dx, dy),
+              //                   radius: 0.3, // Adjust spotlight size
+              //                   colors: [
+              //                     Colors.white.withValues(alpha: 0.1),
+              //                     Colors.transparent,
+              //                   ],
+              //                   stops: const [0.0, 1.0],
+              //                 ),
+              //               ),
+              //             );
+              //           },
+              //         ),
+              //       ),
+              //     ),
             ],
           ),
         ),

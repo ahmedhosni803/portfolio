@@ -1,7 +1,12 @@
 {
   "recommendations": [
-    "k-phelps.keymap-intellij",
+    "k--kato.intellij-idea-keybindings",
     "Dart-Code.flutter",
-    "Dart-Code.dart-code"
+    "Dart-Code.dart-code",
+    "adelphes.android-logcat",
+    "vscjava.vscode-gradle",
+    "mathiasfrohlich.Kotlin",
+    "redhat.java",
+    "pkief.material-icon-theme"
   ]
 }

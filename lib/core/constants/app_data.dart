@@ -164,6 +164,23 @@ class AppData {
         ),
       ],
     ),
+    Project(
+      title: 'اسآل الوشم',
+      subtitle: 'electronic service provided',
+      description:
+          'The Ask Al-Washm application is an electronic service provided by the Ask Al-Washm Est.',
+      imageUrl:
+          'https://www.askalwashm.com/wp-content/uploads/2023/01/logo8.png',
+      links: [
+        const ProjectLink(
+          title: 'App',
+          googlePlay:
+              'https://play.google.com/store/apps/details?id=com.developers.askalwashm',
+          appleStore:
+              'https://apps.apple.com/sa/app/%D8%A7%D8%B3%D8%A3%D9%84-%D8%A7%D9%84%D9%88%D8%B4%D9%85/id1669547503',
+        ),
+      ],
+    ),
   ];
 
   static final List<Experience> experiences = [

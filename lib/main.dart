@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Portfolio',
+        title: 'Ahmed Hosni - Portfolio',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.theme,
         initialRoute: Routes.home,

@@ -21,6 +21,7 @@ class AppData {
   static const String contactEmail = "ahmedhosni803@gmail.com";
   static const String contactPhone = "01226316290";
   static const String contactLocation = "Egypt, Cairo";
+  static const String mediumUrl = "https://medium.com/@ahmedhosni803";
 
   static const String cvUrl = "assets/pdf/Ahmed_Hussiney_Hussein.pdf";
 

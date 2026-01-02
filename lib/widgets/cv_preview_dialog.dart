@@ -69,7 +69,7 @@ class CvPreviewDialog extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(
                   bottom: Radius.circular(12),
                 ),
-                child: SfPdfViewer.asset(AppData.cvUrl),
+                child: SfPdfViewer.asset(AppData.cvUrl,enableHyperlinkNavigation: true,),
               ),
             ),
           ],

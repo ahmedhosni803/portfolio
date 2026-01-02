@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/portfolio/"/>
+    <meta charset="utf-8"/>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap);
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
+      html, body {
+        width: 100%;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        color: white;
+        font-family: 'Outfit', 'sans-serif';
+        background-color: #0F041C;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        margin: unset;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <!--$-->
+    <title>Ahmed Hussiney | Flutter Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--/-->
+    <script src="main.client.dart.js" defer></script>
+    <style>
+      .about {
+        max-width: 800px;
+        padding: 80px 10%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .about h2 {
+        margin-bottom: 40px;
+        color: white;
+        font-size: 2.5rem;
+      }
+      .about p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.1rem;
+        line-height: 1.6em;
+      }
+      .contact {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        color: white;
+        text-align: center;
+      }
+      .contact .content {
+        max-width: 800px;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .contact h2 {
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+      }
+      .contact p {
+        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.2rem;
+        line-height: 1.6em;
+      }
+      .contact .contact-items {
+        display: flex;
+        margin-bottom: 60px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .contact .contact-item {
+        display: flex;
+        padding: 12px 24px;
+        border: solid rgba(168, 85, 247, 0.5);
+        border-radius: 30px;
+        transition: all 300ms;
+        align-items: center;
+        color: #A855F7;
+        font-size: 1.1rem;
+        text-decoration: none;
+        gap: 10px;
+      }
+      .contact .contact-item:hover {
+        background-color: rgba(168, 85, 247, 0.1);
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+      }
+      .contact .location {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      footer {
+        padding-top: 40px;
+        border-top-style: solid;
+        border-top-color: rgba(255, 255, 255, 0.1);
+      }
+      footer p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+      }
+      .experience {
+        max-width: 800px;
+        padding: 80px 10%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .experience h2 {
+        margin-bottom: 60px;
+        color: white;
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      .experience .timeline {
+        position: relative;
+        padding-left: 30px;
+        margin-left: 20px;
+        border-left-style: solid;
+        border-left-color: #A855F7;
+        border-left-width: 2px;
+      }
+      .experience .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+      }
+      .experience .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -36px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #A855F7;
+        box-shadow: 0 0 10px #A855F7;
+      }
+      .experience h3 {
+        margin-bottom: 8px;
+        color: white;
+        font-size: 1.5rem;
+      }
+      .experience .company {
+        color: #A855F7;
+        font-weight: bold;
+      }
+      .experience .period {
+        margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+      .experience p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6em;
+      }
+      .experience .show-more-container {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+      }
+      .experience .show-more-btn {
+        display: flex;
+        padding: 10px 24px;
+        border: solid #A855F7;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 300ms;
+        align-items: center;
+        color: white;
+        font-size: 1rem;
+        background-color: transparent;
+      }
+      .experience .show-more-btn:hover {
+        background-color: #A855F7;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+      }
+      .experience .education-card {
+        padding: 24px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        transition: transform 300ms;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      .experience .education-card:hover {
+        transform: scale(1.02);
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+      .experience .edu-header {
+        display: flex;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+      .experience .edu-date {
+        color: #A855F7;
+        font-weight: bold;
+      }
+      .experience .edu-school {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .hero {
+        display: flex;
+        min-height: 100vh;
+        padding-top: 80px;
+        padding-left: 10%;
+        padding-right: 10%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .hero .content {
+        display: flex;
+        max-width: 800px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        line-height: 1.2em;
+        white-space: pre-line;
+      }
+      .hero .highlight {
+        color: transparent;
+        background: linear-gradient(to right, #A855F7, #EC4899);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero .subtitle {
+        max-width: 600px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.5rem;
+      }
+      .hero .actions {
+        display: flex;
+        margin-top: 30px;
+        gap: 20px;
+      }
+      .hero .button {
+        padding: 12px 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 300ms;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .hero .button:hover {
+        transform: scale(1.05);
+      }
+      .hero .primary {
+        color: white;
+        background-color: #A855F7;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+      }
+      .hero .secondary {
+        border: solid rgba(255, 255, 255, 0.5);
+        color: white;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 15px 10%;
+        background-color: rgba(15, 4, 28, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+      }
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .navbar a {
+        transition: color 300ms;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .navbar a:hover {
+        color: #A855F7;
+      }
+      .navbar .desktop-menu {
+        display: flex;
+        gap: 30px;
+      }
+      .navbar .mobile-toggle {
+        display: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+      }
+      .navbar .mobile-menu {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 30px;
+        justify-content: center;
+        background-color: rgba(15, 4, 28, 0.98);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      }
+      .navbar .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+      @media (max-width: 768px) .desktop-menu {
+        display: none;
+      }
+      @media (max-width: 768px) .mobile-toggle {
+        display: block;
+      }
+      @media (max-width: 768px) .navbar {
+        padding: 15px 5%;
+      }
+      .projects {
+        max-width: 1200px;
+        padding: 80px 10%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .projects h2 {
+        margin-bottom: 60px;
+        color: white;
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      .projects .project-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      .projects .project-card {
+        border-radius: 15px;
+        transition: transform 300ms;
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+      .projects .project-card:hover {
+        transform: scale(1.03);
+      }
+      .projects .project-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+      .projects img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .projects .project-content {
+        padding: 24px;
+      }
+      .projects h3 {
+        margin-bottom: 8px;
+        color: white;
+        font-size: 1.5rem;
+      }
+      .projects .subtitle {
+        display: block;
+        margin-bottom: 12px;
+        color: #A855F7;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+      .projects p {
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6em;
+      }
+      .projects .links {
+        display: flex;
+        gap: 10px;
+      }
+      .projects .store-link {
+        padding: 8px 16px;
+        border-radius: 20px;
+        transition: background-color 200ms;
+        color: white;
+        font-size: 0.9rem;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .projects .store-link:hover {
+        background-color: #A855F7;
+      }
+      .main {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: white;
+        font-family: 'Inter', 'sans-serif';
+        background-color: #0F041C;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <!--@app-->
+    <div class="main">
+      <header class="navbar animate__animated animate__fadeInDown">
+        <div class="logo">
+          <img style="border-radius: 50%; object-fit: cover;" width="40" height="40" src="assets/logo/ahmed_logo.png"/>
+          <span style="margin-left: 10px">Ahmed</span>
+        </div>
+        <nav class="desktop-menu">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
+      </header>
+      <section id="home" class="hero">
+        <div class="content">
+          <h1>
+            Turning ideas
+            into <span class="highlight">reality</span>
+          </h1>
+          <p class="subtitle">Skilled in Flutter, Clean Architecture, and Native Integrations. I build apps that perform.</p>
+          <div class="actions">
+            <a class="button primary" href="assets/pdf/Ahmed_Hussiney_Hussein.pdf" target="_blank">Download CV</a>
+            <a class="button secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="content">
+          <p>
+            Delivering end-to-end mobile applications across multiple industries, including E-commerce, Banking, Food Delivery, Education, and Healthcare. Mentor to 180+ students.
+          </p>
+        </div>
+      </section>
+      <section id="experience" class="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item animate__animated animate__fadeInUp" style="animation-delay: 0.0s">
+            <div class="timeline-content">
+              <h3>Senior Mobile Developer</h3>
+               at 
+              <span class="company">Cubic Information Systems</span>
+              <div class="period">Dec 2024 – present</div>
+              <p>
+                Built end-to-end mobile banking apps with Flutter, including native code integrations and secure data encryption.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+            <div class="timeline-content">
+              <h3>Flutter Instructor</h3>
+               at 
+              <span class="company">Route</span>
+              <div class="period">Jun 2023 – present</div>
+              <p>
+                Mentored 180+ students through real-world projects. Taught advanced concepts (Clean Architecture, Maps, Payment) and guided app publishing.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+            <div class="timeline-content">
+              <h3>Mid Senior Flutter Developer</h3>
+               at 
+              <span class="company">Aknana</span>
+              <div class="period">Oct 2023 – Dec 2024</div>
+              <p>Developed a social media application with Flutter at a software house.</p>
+            </div>
+          </div>
+        </div>
+        <div class="show-more-container">
+          <button class="show-more-btn">Show More<i class="fa-solid fa-chevron-down" style="margin-left: 8px"></i></button>
+        </div>
+        <div style="height: 60px"></div>
+        <h2>Education</h2>
+        <div class="education-list">
+          <div class="education-card animate__animated animate__zoomIn">
+            <div class="edu-header"><h3>Bachelor's degree in Information Systems</h3><span class="edu-date">2019 – 2023</span></div>
+            <p class="edu-school">SHA</p>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="ADCB Egypt Mobile Banking" src="https://placehold.co/600x400.png"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>ADCB Egypt Mobile Banking</h3>
+              <span class="subtitle">Banking App</span>
+              <p>
+                Comprehensive digital banking application enabling customers to manage accounts, transfers, cards, and secure services.
+              </p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="Dushka Burger" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/e1/b7/a2e1b796-901c-9bd4-df26-a75d54a56d0e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.jpg"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>Dushka Burger</h3>
+              <span class="subtitle">Food Delivery</span>
+              <p>
+                Dedicated food ordering app allowing users to browse menus, customize orders, and place simple, seamless orders.
+              </p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=com.dushka.dushka_burger" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/us/app/dushka-burger/id6692616449" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="PetaPen" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/16/18/8e/16188eca-291e-b715-85ff-3b530f76a8b0/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.jpg"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>PetaPen</h3>
+              <span class="subtitle">E-commerce</span>
+              <p>One-stop shopping app for high-quality stationery, curated for professionals and students.</p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=com.company.petaPen" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/eg/app/petapen/id6504558906" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="Qarah" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/93/ca/df/93cadf87-0aa6-4a68-0db9-f8a088c60f69/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/1200x630wa.png"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>Qarah</h3>
+              <span class="subtitle">Services</span>
+              <p>
+                App for water filter maintenance and cooler services offering technician requests and product purchases.
+              </p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=com.qarah.userapp" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/eg/app/qarah-%D9%82%D8%B1%D8%A7%D8%AD/id6749554152" target="_blank">App Store</a>
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=com.qarah.providerapp" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/eg/app/qarah-provider-%D9%85%D8%B2%D9%88%D8%AF-%D8%AE%D8%AF%D9%85%D8%A9-%D9%82%D8%B1%D8%A7%D8%AD/id6749553815" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="UCMAS" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/89/5d/ea895deb-4b29-326a-e1c5-fb25e918805b/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/1200x630wa.jpg"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>UCMAS</h3>
+              <span class="subtitle">Education</span>
+              <p>Interactive mobile application revolutionizing the way students learn and engage with mathematics.</p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=ws.bmsc.ucmas" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/eg/app/ucmas-get-in-challenge/id6468704261" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="Neomrs" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/91/37/43913755-20fb-1612-077e-a2dde65ee148/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>Neomrs</h3>
+              <span class="subtitle">Social Media</span>
+              <p>
+                Platform connecting users to share content, like, comment, and stay in touch with friends and family.
+              </p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=app.neomars.com" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/eg/app/neomrs/id6478036232" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="Voyager" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0d/41/53/0d4153cb-be02-4b87-b3dc-2a7a21b59097/AppIcon-1x_U007emarketing-0-7-0-0-85-220-0.png/1200x630wa.png"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>Voyager</h3>
+              <span class="subtitle">Travel</span>
+              <p>Booking app for flights, hotels, and tours across most countries with ease.</p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=com.echopos.voyager" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/us/app/voyager-traveling/id6504419730" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img alt="Smo alfkr - App Medical" src="https://doctorstorage.blob.core.windows.net/632043/Profile/passport_04c076ec-4895-4e33-9c82-b6b88b8b7bc8.jpg?sig=VutXnpexGC5xBvw2lwhynbnp1Ev%2FS5p8oRMj4tdzdP4%3D&amp;sv=2015-04-05&amp;si=PrivatePolicy&amp;sr=b"/>
+              <div class="overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3>Smo alfkr - App Medical</h3>
+              <span class="subtitle">Healthcare</span>
+              <p>Complete medical app for doctor appointments, video/audio calls, chat, and online payments.</p>
+              <div class="links">
+                <a class="store-link" href="https://play.google.com/store/apps/details?id=com.smoalfkr.smoalfkr" target="_blank">Google Play</a>
+                <a class="store-link" href="https://apps.apple.com/eg/app/smoalfkr/id6502081376" target="_blank">App Store</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact animate__animated animate__fadeIn">
+        <div class="content">
+          <h2>Contact</h2>
+          <p>Looking for a rigorous Flutter Developer? Have a project in mind? Let's connect.</p>
+          <div class="contact-items">
+            <a class="contact-item" href="mailto:ahmedhosni803@gmail.com"><i class="fa-solid fa-envelope"></i>ahmedhosni803@gmail.com</a>
+            <a class="contact-item" href="tel:01226316290"><i class="fa-solid fa-phone"></i>01226316290</a>
+            <div class="contact-item location"><i class="fa-solid fa-location-dot"></i>Egypt, Cairo</div>
+          </div>
+        </div>
+        <footer><p>© 2026 Ahmed Hussiney Hussein. All rights reserved.</p></footer>
+      </section>
+    </div>
+    <!--/@app-->
+  </body>
+</html>

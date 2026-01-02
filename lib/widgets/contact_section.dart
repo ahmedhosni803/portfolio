@@ -27,25 +27,28 @@ class ContactSection extends StatelessWidget {
             textAlign: TextAlign.center,
             style: AppTheme.bodyText,
           ),
-          const SizedBox(height: 20),
-          Text(
-            AppData.contactEmail,
-            style: AppTheme.bodyText.copyWith(color: AppTheme.primaryPurple),
-          ),
-          const SizedBox(height: 10),
-          InkWell(
-            onTap: () async {
-              await launchUrl(Uri.parse('tel:${AppData.contactPhone}'));
-            },
-            child: Text(
-              AppData.contactPhone,
-              style: AppTheme.bodyText.copyWith(color: AppTheme.primaryPurple),
-            ),
-          ),
           const SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              _SocialButton(
+                icon: Iconsax.sms_outline,
+                onTap: () async {
+                  final Uri emailLaunchUri = Uri(
+                    scheme: 'mailto',
+                    path: AppData.contactEmail,
+                  );
+                  await launchUrl(emailLaunchUri);
+                },
+              ),
+              const SizedBox(width: 20),
+              _SocialButton(
+                icon: Iconsax.call_outline,
+                onTap: () async {
+                  await launchUrl(Uri.parse('tel:${AppData.contactPhone}'));
+                },
+              ),
+              const SizedBox(width: 20),
               _SocialButton(
                 icon: BoxIcons.bxl_medium,
                 onTap: () async {

@@ -38,7 +38,8 @@ class ExperienceSection extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Container(
-                    width: 700,
+                    constraints: const BoxConstraints(maxWidth: 700),
+                    width: double.infinity,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 24,
                       vertical: 16,
@@ -47,35 +48,68 @@ class ExperienceSection extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              edu['degree']!,
-                              style: AppTheme.heroTitle.copyWith(fontSize: 16),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              edu['institution']!,
-                              style: AppTheme.bodyText.copyWith(
-                                color: Colors.white70,
-                                fontSize: 14,
+                    child: LayoutUtils.isMobile(context)
+                        ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                edu['degree']!,
+                                style: AppTheme.heroTitle.copyWith(
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          edu['date']!,
-                          style: AppTheme.bodyText.copyWith(
-                            color: AppTheme.primaryPurple,
-                            fontWeight: FontWeight.bold,
+                              const SizedBox(height: 4),
+                              Text(
+                                edu['institution']!,
+                                style: AppTheme.bodyText.copyWith(
+                                  color: Colors.white70,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                edu['date']!,
+                                style: AppTheme.bodyText.copyWith(
+                                  color: AppTheme.primaryPurple,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      edu['degree']!,
+                                      style: AppTheme.heroTitle.copyWith(
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      edu['institution']!,
+                                      style: AppTheme.bodyText.copyWith(
+                                        color: Colors.white70,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              Text(
+                                edu['date']!,
+                                style: AppTheme.bodyText.copyWith(
+                                  color: AppTheme.primaryPurple,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
                   ),
                 ),
               ),

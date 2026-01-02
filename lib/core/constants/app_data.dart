@@ -22,7 +22,7 @@ class AppData {
   static const String contactPhone = "01226316290";
   static const String contactLocation = "Egypt, Cairo";
 
-  static const String cvUrl = "pdf/Ahmed_Hussiney_Hussein.pdf";
+  static const String cvUrl = "assets/pdf/Ahmed_Hussiney_Hussein.pdf";
 
   // Data
   static final List<Project> projects = [

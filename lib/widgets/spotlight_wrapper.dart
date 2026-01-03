@@ -43,10 +43,10 @@ class _SpotlightWrapperState extends State<SpotlightWrapper> {
                     decoration: BoxDecoration(
                       gradient: RadialGradient(
                         center: Alignment(dx, dy),
-                        radius: 0.3, // Match ProjectCard radius
+                        radius: 0.12, // Match ProjectCard radius
                         colors: [
                           Colors.white.withValues(
-                            alpha: 0.1,
+                            alpha: 0.05,
                           ), // Match ProjectCard color
                           Colors.transparent,
                         ],

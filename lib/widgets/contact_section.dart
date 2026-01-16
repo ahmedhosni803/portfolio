@@ -17,7 +17,7 @@ class ContactSection extends StatelessWidget {
         vertical: 80,
         horizontal: LayoutUtils.getHorizontalPadding(context),
       ),
-      color: const Color(0xFF190B2D), // Footer color
+      color: AppTheme.darkBackground, // Footer color
       child: Column(
         children: [
           Text("Contact", style: AppTheme.sectionTitle),
@@ -92,7 +92,7 @@ class _SocialButtonState extends State<_SocialButton> {
                 : Colors.transparent,
             shape: BoxShape.circle,
             border: Border.all(
-              color: _isHovered ? AppTheme.primaryPurple : Colors.grey.shade800,
+              color: _isHovered ? AppTheme.primaryColor : Colors.grey.shade800,
               width: 1,
             ),
           ),

@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
             // Interactive Particle Background
             InteractiveParticleBackground(
               numberOfParticles: 100,
-              particleColor: AppTheme.primaryPurple,
+              particleColor: AppTheme.primaryColor,
               mousePosition: _mousePos,
             ),
 
@@ -54,7 +54,7 @@ class _HomeViewState extends State<HomeView> {
                   shape: BoxShape.circle,
                   gradient: RadialGradient(
                     colors: [
-                      AppTheme.primaryPurple.withOpacity(0.3),
+                      AppTheme.primaryColor.withOpacity(0.3),
                       Colors.transparent,
                     ],
                     radius: 0.6,
@@ -72,7 +72,7 @@ class _HomeViewState extends State<HomeView> {
                   shape: BoxShape.circle,
                   gradient: RadialGradient(
                     colors: [
-                      AppTheme.primaryPurple.withOpacity(0.2),
+                      AppTheme.primaryColor.withOpacity(0.2),
                       Colors.transparent,
                     ],
                     radius: 0.6,

@@ -70,7 +70,7 @@ class ExperienceSection extends StatelessWidget {
                               Text(
                                 edu['date']!,
                                 style: AppTheme.bodyText.copyWith(
-                                  color: AppTheme.primaryPurple,
+                                  color: AppTheme.primaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -104,7 +104,7 @@ class ExperienceSection extends StatelessWidget {
                               Text(
                                 edu['date']!,
                                 style: AppTheme.bodyText.copyWith(
-                                  color: AppTheme.primaryPurple,
+                                  color: AppTheme.primaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -147,27 +147,27 @@ class _ExperienceCardState extends State<ExperienceCard> {
             end: Alignment.bottomRight,
             colors: _isHovered
                 ? [
-                    const Color(0xFF452775),
-                    const Color(0xFF2E1250),
+                    AppTheme.primaryColor.withValues(alpha: 0.2),
+                    AppTheme.darkBackground,
                   ] // Brighter on hover
-                : [const Color(0xFF2B114F), const Color(0xFF130328)],
+                : [AppTheme.cardColor, AppTheme.darkBackground],
           ),
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
             color: _isHovered
-                ? AppTheme.primaryPurple
-                : AppTheme.primaryPurple.withValues(alpha: 0.3),
+                ? AppTheme.primaryColor
+                : AppTheme.primaryColor.withValues(alpha: 0.3),
             width: _isHovered ? 1.5 : 1.0,
           ),
           boxShadow: _isHovered
               ? [
                   BoxShadow(
-                    color: AppTheme.primaryPurple.withValues(alpha: 0.4),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.4),
                     blurRadius: 30,
                     spreadRadius: 1,
                   ),
                   BoxShadow(
-                    color: AppTheme.primaryPurple.withValues(alpha: 0.2),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.2),
                     blurRadius: 10,
                     spreadRadius: -5,
                   ),
@@ -207,7 +207,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
             const SizedBox(height: 10),
             Text(
               widget.experience.role,
-              style: AppTheme.bodyText.copyWith(color: AppTheme.lightPurple),
+              style: AppTheme.bodyText.copyWith(color: AppTheme.secondaryColor),
             ),
             const SizedBox(height: 15),
             Text(widget.experience.description, style: AppTheme.bodyText),

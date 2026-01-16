@@ -2,246 +2,238 @@ import '../../models/experience.dart';
 import '../../models/project.dart';
 
 class AppData {
-  // Strings
+  // ======================
+  // Basic Info
+  // ======================
   static const String name = "Ahmed Hussiney Hussein";
-  static const String role = "Flutter Developer";
+  static const String role = "Senior Flutter Developer";
+
   static const String heroTitle = "Ahmed Hussiney Hussein";
   static const String heroSubtitle =
-      "Flutter Developer with 4+ years of experience.";
+      "Senior Flutter Developer with 4+ years of experience.";
+
   static const String heroDescription =
-      "Delivering end-to-end mobile applications across multiple industries, including E-commerce, Banking, Food Delivery, Education, and Healthcare. Mentor to 180+ students.";
+      "Building secure, production-ready mobile applications across fintech, banking, e-commerce, and on-demand services. Mentor to 200+ students.";
 
   static const String aboutTitleStart = "Turning ideas\ninto ";
   static const String aboutTitleHighlight = "reality";
-  static const String aboutSubtitle =
-      "Skilled in Flutter, Clean Architecture, and Native Integrations. I build apps that perform.";
 
+  static const String aboutSubtitle =
+      "Experienced in Flutter, Clean Architecture, state management, and native integrations. Focused on scalable and high-performance mobile applications.";
+
+  // ======================
+  // Contact
+  // ======================
   static const String contactText =
-      "Looking for a rigorous Flutter Developer? Have a project in mind? Let's connect.";
+      "Interested in working together or discussing a new opportunity? Let's connect.";
   static const String contactEmail = "ahmedhosni803@gmail.com";
   static const String contactPhone = "01226316290";
-  static const String contactLocation = "Egypt, Cairo";
+  static const String contactLocation = "Cairo, Egypt";
   static const String mediumUrl = "https://medium.com/@ahmedhosni803";
 
   static const String cvUrl = "assets/pdf/Ahmed_Hussiney_Hussein.pdf";
 
-  // Data
-  static final List<Project> projects = [
-    Project(
-      title: 'ADCB Egypt Mobile Banking',
-      subtitle: 'Banking App',
-      description:
-          'Comprehensive digital banking application enabling customers to manage accounts, transfers, cards, and secure services.',
-      imageUrl: 'https://placehold.co/600x400.png',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay: 'https://play.google.com/store/apps',
-          appleStore: 'https://apps.apple.com',
-        ),
-      ],
-    ),
-    Project(
-      title: 'Dushka Burger',
-      subtitle: 'Food Delivery',
-      description:
-          'Dedicated food ordering app allowing users to browse menus, customize orders, and place simple, seamless orders.',
-      imageUrl:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/e1/b7/a2e1b796-901c-9bd4-df26-a75d54a56d0e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.jpg',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.dushka.dushka_burger',
-          appleStore:
-              'https://apps.apple.com/us/app/dushka-burger/id6692616449',
-        ),
-      ],
-    ),
-    Project(
-      title: 'PetaPen',
-      subtitle: 'E-commerce',
-      description:
-          'One-stop shopping app for high-quality stationery, curated for professionals and students.',
-      imageUrl:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/16/18/8e/16188eca-291e-b715-85ff-3b530f76a8b0/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.jpg',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.company.petaPen',
-          appleStore: 'https://apps.apple.com/eg/app/petapen/id6504558906',
-        ),
-      ],
-    ),
-    Project(
-      title: 'Qarah',
-      subtitle: 'Services',
-      description:
-          'App for water filter maintenance and cooler services offering technician requests and product purchases.',
-      imageUrl:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/93/ca/df/93cadf87-0aa6-4a68-0db9-f8a088c60f69/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/1200x630wa.png',
-      links: [
-        const ProjectLink(
-          title: 'User App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.qarah.userapp',
-          appleStore:
-              'https://apps.apple.com/eg/app/qarah-%D9%82%D8%B1%D8%A7%D8%AD/id6749554152',
-        ),
-        const ProjectLink(
-          title: 'Provider App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.qarah.providerapp',
-          appleStore:
-              'https://apps.apple.com/eg/app/qarah-provider-%D9%85%D8%B2%D9%88%D8%AF-%D8%AE%D8%AF%D9%85%D8%A9-%D9%82%D8%B1%D8%A7%D8%AD/id6749553815',
-        ),
-      ],
-    ),
-    Project(
-      title: 'UCMAS',
-      subtitle: 'Education',
-      description:
-          'Interactive mobile application revolutionizing the way students learn and engage with mathematics.',
-      imageUrl:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/89/5d/ea895deb-4b29-326a-e1c5-fb25e918805b/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/1200x630wa.jpg',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=ws.bmsc.ucmas',
-          appleStore:
-              'https://apps.apple.com/eg/app/ucmas-get-in-challenge/id6468704261',
-        ),
-      ],
-    ),
-    Project(
-      title: 'Neomrs',
-      subtitle: 'Social Media',
-      description:
-          'Platform connecting users to share content, like, comment, and stay in touch with friends and family.',
-      imageUrl:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/91/37/43913755-20fb-1612-077e-a2dde65ee148/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=app.neomars.com',
-          appleStore: 'https://apps.apple.com/eg/app/neomrs/id6478036232',
-        ),
-      ],
-    ),
-    Project(
-      title: 'Voyager',
-      subtitle: 'Travel',
-      description:
-          'Booking app for flights, hotels, and tours across most countries with ease.',
-      imageUrl:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0d/41/53/0d4153cb-be02-4b87-b3dc-2a7a21b59097/AppIcon-1x_U007emarketing-0-7-0-0-85-220-0.png/1200x630wa.png',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.echopos.voyager',
-          appleStore:
-              'https://apps.apple.com/us/app/voyager-traveling/id6504419730',
-        ),
-      ],
-    ),
-    Project(
-      title: 'Smo alfkr - App Medical',
-      subtitle: 'Healthcare',
-      description:
-          'Complete medical app for doctor appointments, video/audio calls, chat, and online payments.',
-      imageUrl:
-          'https://doctorstorage.blob.core.windows.net/632043/Profile/passport_04c076ec-4895-4e33-9c82-b6b88b8b7bc8.jpg?sig=VutXnpexGC5xBvw2lwhynbnp1Ev%2FS5p8oRMj4tdzdP4%3D&sv=2015-04-05&si=PrivatePolicy&sr=b',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.smoalfkr.smoalfkr',
-          appleStore: 'https://apps.apple.com/eg/app/smoalfkr/id6502081376',
-        ),
-      ],
-    ),
-    Project(
-      title: 'اسآل الوشم',
-      subtitle: 'electronic service provided',
-      description:
-          'The Ask Al-Washm application is an electronic service provided by the Ask Al-Washm Est.',
-      imageUrl:
-          'https://www.askalwashm.com/wp-content/uploads/2023/01/logo8.png',
-      links: [
-        const ProjectLink(
-          title: 'App',
-          googlePlay:
-              'https://play.google.com/store/apps/details?id=com.developers.askalwashm',
-          appleStore:
-              'https://apps.apple.com/sa/app/%D8%A7%D8%B3%D8%A3%D9%84-%D8%A7%D9%84%D9%88%D8%B4%D9%85/id1669547503',
-        ),
-      ],
-    ),
-  ];
+  // ======================
+  // Projects (from CV)
+  // ======================
+static final List<Project> projects = [
+  Project(
+    title: 'ADCB Egypt Mobile Banking',
+    subtitle: 'Fintech / Banking',
+    description:
+        'Production mobile banking application enabling customers to manage accounts, transfers, cards, and secure banking services. Contributed to the Digital Loan feature.',
+    imageUrl:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/77/68/6f7768c7-7f7e-5c3c-b7c1-8c2e3b6a7c3e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.png',
+    links: [
+      const ProjectLink(
+        title: 'App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.adcb.mobilebanking.eg',
+        appleStore:
+            'https://apps.apple.com/eg/app/adcb-egypt-mobile-banking/id1491355111',
+      ),
+    ],
+  ),
 
+  Project(
+    title: 'FindHelp Platform',
+    subtitle: 'Multi-App Ecosystem',
+    description:
+        'Production-grade ecosystem including customer, shops, restaurants, and delivery applications.',
+    imageUrl:
+        'https://play-lh.googleusercontent.com/6G8u9nY5D3y7QYc6Kx8n3U4k5lR2p9JxZK=s180',
+    links: [
+      const ProjectLink(
+        title: 'Customer App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.extreme.help',
+      ),
+      const ProjectLink(
+        title: 'Shops App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.extreme.shopprovider',
+      ),
+      const ProjectLink(
+        title: 'Delivery App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.extreme.delivery',
+      ),
+    ],
+  ),
+
+  Project(
+    title: 'Meatoo',
+    subtitle: 'E-commerce',
+    description:
+        'Meat shopping application offering a fast and convenient shopping experience.',
+    imageUrl:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8c/1e/2b/8c1e2b4d-3c9b-4a2f-9b3d-6e7b5d1f4a2c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.png',
+    links: [
+      const ProjectLink(
+        title: 'App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.meatoo.app',
+        appleStore:
+            'https://apps.apple.com/eg/app/meatoo/id6448787340',
+      ),
+    ],
+  ),
+
+  Project(
+    title: 'Qarah',
+    subtitle: 'On-Demand Services',
+    description:
+        'Saudi application for water filter maintenance and technician services with online payments.',
+    imageUrl:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/93/ca/df/93cadf87-0aa6-4a68-0db9-f8a088c60f69/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/1200x630wa.png',
+    links: [
+      const ProjectLink(
+        title: 'User App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.qarah.userapp',
+        appleStore:
+            'https://apps.apple.com/eg/app/qarah-%D9%82%D8%B1%D8%A7%D8%AD/id6749554152',
+      ),
+      const ProjectLink(
+        title: 'Provider App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.qarah.providerapp',
+        appleStore:
+            'https://apps.apple.com/eg/app/qarah-provider-%D9%85%D8%B2%D9%88%D8%AF-%D8%AE%D8%AF%D9%85%D8%A9-%D9%82%D8%B1%D8%A7%D8%AD/id6749553815',
+      ),
+    ],
+  ),
+
+  Project(
+    title: 'UCMAS – Get In Challenge',
+    subtitle: 'Education',
+    description:
+        'Interactive education application designed to improve student engagement and learning experience.',
+    imageUrl:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/89/5d/ea895deb-4b29-326a-e1c5-fb25e918805b/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/1200x630wa.png',
+    links: [
+      const ProjectLink(
+        title: 'App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=ws.bmsc.ucmas',
+        appleStore:
+            'https://apps.apple.com/eg/app/ucmas-get-in-challenge/id6468704261',
+      ),
+    ],
+  ),
+
+  Project(
+    title: 'Voyager',
+    subtitle: 'Travel',
+    description:
+        'Travel booking application for flights, hotels, and tours.',
+    imageUrl:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0d/41/53/0d4153cb-be02-4b87-b3dc-2a7a21b59097/AppIcon-1x_U007emarketing-0-7-0-0-85-220.png/1200x630wa.png',
+    links: [
+      const ProjectLink(
+        title: 'App',
+        googlePlay:
+            'https://play.google.com/store/apps/details?id=com.echopos.voyager',
+        appleStore:
+            'https://apps.apple.com/us/app/voyager-traveling/id6504419730',
+      ),
+    ],
+  ),
+];
+
+  // ======================
+  // Experience (from CV)
+  // ======================
   static final List<Experience> experiences = [
     Experience(
       company: 'Cubic Information Systems',
       role: 'Senior Mobile Developer',
-      period: 'Dec 2024 – present',
+      period: 'Dec 2024 – Present',
       description:
-          'Built end-to-end mobile banking apps with Flutter, including native code integrations and secure data encryption.',
+          'Full-time | On-site – Cairo, Egypt\n'
+          'Developed secure mobile banking applications using Flutter with native integrations and security-focused solutions.',
     ),
     Experience(
       company: 'Route',
       role: 'Flutter Instructor',
-      period: 'Jun 2023 – present',
+      period: 'Jun 2023 – Present',
       description:
-          'Mentored 180+ students through real-world projects. Taught advanced concepts (Clean Architecture, Maps, Payment) and guided app publishing.',
+          'Part-time | On-site – Cairo, Egypt\n'
+          'Mentored 200+ students through advanced Flutter training and real-world projects, covering Clean Architecture, state management, and app publishing.',
     ),
     Experience(
       company: 'Aknana',
-      role: 'Mid Senior Flutter Developer',
-      period: 'Oct 2023 – Dec 2024',
+      role: 'Senior Flutter Developer',
+      period: 'Dec 2023 – Dec 2024',
       description:
-          'Developed a social media application with Flutter at a software house.',
-    ),
-    Experience(
-      company: 'Freelancer',
-      role: 'Flutter Developer',
-      period: 'Sep 2022 – present',
-      description:
-          'Developed and published 15+ apps across E-commerce, Medical, Educational, Social, and Utility sectors.',
+          'Full-time | Remote – Saudi Arabia\n'
+          'Developed a social media application using Flutter with a focus on performance optimization and scalable architecture.',
     ),
     Experience(
       company: 'BMS',
       role: 'Flutter Developer',
       period: 'Dec 2023 – Nov 2024',
       description:
-          'Built and maintained scalable apps for E-commerce and training systems.',
+          'Full-time | Remote – Alexandria, Egypt\n'
+          'Built and maintained education and training applications focusing on scalability and usability.',
     ),
     Experience(
       company: 'Binary',
       role: 'Flutter Developer',
       period: 'Feb 2023 – Jan 2024',
       description:
-          'Built and maintained scalable apps for education and training systems.',
+          'Full-time | Remote – Cairo, Egypt\n'
+          'Contributed to the development of a social media application using clean architecture and state management.',
     ),
     Experience(
       company: 'Lightbulb Tech',
       role: 'Flutter Developer',
       period: 'Mar 2023 – Dec 2023',
       description:
-          'Developed educational applications focusing on usability and performance.',
+          'Part-time | Remote\n'
+          'Developed educational Flutter applications focusing on usability and performance.',
     ),
     Experience(
       company: 'Nebras',
       role: 'Flutter Developer',
-      period: 'Sep 2021 – Dec 2023',
+      period: 'Sep 2021 – Feb 2023',
       description:
-          'Developed E-commerce applications focusing on usability and performance.',
+          'Full-time | Remote – Saudi Arabia\n'
+          'Developed a water distribution application with payment and delivery workflows using Flutter.',
+    ),
+    Experience(
+      company: 'Freelancer',
+      role: 'Flutter Developer',
+      period: 'Sep 2022 – Present',
+      description:
+          'Freelance | Remote\n'
+          'Delivered and published 15+ Flutter applications across fintech, e-commerce, education, and on-demand services.',
     ),
   ];
 
+  // ======================
+  // Education
+  // ======================
   static const List<Map<String, String>> education = [
     {
       'degree': "Bachelor's degree in Information Systems",

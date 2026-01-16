@@ -38,7 +38,7 @@ class ProjectsSection extends StatelessWidget {
             child: OutlinedButton(
               onPressed: () => Navigator.pushNamed(context, Routes.projects),
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: AppTheme.primaryPurple),
+                side: BorderSide(color: AppTheme.primaryColor),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 40,
                   vertical: 20,
@@ -114,7 +114,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       boxShadow: [
                         BoxShadow(
                           color: _isHovered
-                              ? AppTheme.primaryPurple.withValues(alpha: 0.4)
+                              ? AppTheme.primaryColor.withValues(alpha: 0.4)
                               : Colors.black.withValues(alpha: 0.2),
                           blurRadius: _isHovered ? 30 : 20,
                           offset: const Offset(0, 10),
@@ -124,7 +124,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         image: NetworkImage(widget.project.imageUrl),
                         fit: BoxFit.cover,
                         colorFilter: ColorFilter.mode(
-                          AppTheme.primaryPurple.withValues(
+                          AppTheme.primaryColor.withValues(
                             alpha: _isHovered ? 0.1 : 0.2,
                           ), // Tint reveals on hover
                           BlendMode.color,
@@ -151,7 +151,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     Text(
                       'Featured Project',
                       style: AppTheme.bodyText.copyWith(
-                        color: AppTheme.primaryPurple,
+                        color: AppTheme.primaryColor,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -313,7 +313,7 @@ class _MobileProjectCard extends StatelessWidget {
                 Text(
                   'Featured Project',
                   style: AppTheme.bodyText.copyWith(
-                    color: AppTheme.primaryPurple,
+                    color: AppTheme.primaryColor,
                     fontSize: 12,
                   ),
                 ),

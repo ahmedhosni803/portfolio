@@ -26,7 +26,7 @@ class AboutSection extends StatelessWidget {
                 TextSpan(text: AppData.aboutTitleStart),
                 TextSpan(
                   text: AppData.aboutTitleHighlight,
-                  style: TextStyle(color: AppTheme.primaryPurple),
+                  style: TextStyle(color: AppTheme.primaryColor),
                 ),
                 const TextSpan(text: '...'),
               ],

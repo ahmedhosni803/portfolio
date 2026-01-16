@@ -17,7 +17,7 @@ class NavBar extends StatelessWidget {
         vertical: 20,
       ),
       decoration: BoxDecoration(
-        color: const Color(0xFF190B2D).withValues(alpha: 0.9),
+        color: AppTheme.darkBackground.withValues(alpha: 0.8),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.1),
@@ -26,6 +26,7 @@ class NavBar extends StatelessWidget {
           ),
         ],
       ),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -131,7 +132,7 @@ class _NavItemState extends State<_NavItem> {
               Icon(
                 widget.icon,
                 color: _isHovered
-                    ? const Color(0xFF6C63FF)
+                    ? AppTheme.primaryColor
                     : Colors.white, // Highlight color
                 size: 20,
               ),

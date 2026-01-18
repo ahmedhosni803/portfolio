@@ -43,14 +43,14 @@ static final List<Project> projects = [
     description:
         'Production mobile banking application enabling customers to manage accounts, transfers, cards, and secure banking services. Contributed to the Digital Loan feature.',
     imageUrl:
-        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/77/68/6f7768c7-7f7e-5c3c-b7c1-8c2e3b6a7c3e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1200x630wa.png',
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/45/74/65/457465fa-d802-1c1e-c2a1-6ae58f81c942/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/1200x630wa.jpg',
     links: [
       const ProjectLink(
         title: 'App',
         googlePlay:
-            'https://play.google.com/store/apps/details?id=com.adcb.mobilebanking.eg',
+            'https://play.google.com/store/apps/details?id=com.adcb.bank',
         appleStore:
-            'https://apps.apple.com/eg/app/adcb-egypt-mobile-banking/id1491355111',
+            'https://apps.apple.com/ae/app/adcb/id547172388',
       ),
     ],
   ),
